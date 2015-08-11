@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    
+        IBOutlet UIImageView *map;
+
+     IBOutlet UIButton *fetchmap;
+    IBOutlet UITextField *city;
+    IBOutlet UITextField *state;
+    
+}
+
+-(IBAction)fetchImage:(id)sender;
+-(IBAction)getcityandstate:(id) sender;
+
 
 @end

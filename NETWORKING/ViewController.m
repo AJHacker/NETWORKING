@@ -13,7 +13,14 @@
 @end
 
 @implementation ViewController
-
+-(IBAction)fetchImage:(id)sender{
+     NSString *citystate = [[city.text stringByAppendingString:@","] stringByAppendingString:state.text];
+    NSString *final =[[NSString alloc] initWithFormat: @"http://maps.google.com/maps/api/staticmap?center=%@&zoom=10&size=320x350&sensor=false", citystate ];
+                      NSURL *url = [[NSURL alloc] initWithString:final];
+                      UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    [map setImage:image];
+}
+-(IBAction)getcityandstate:(id) sender{}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
